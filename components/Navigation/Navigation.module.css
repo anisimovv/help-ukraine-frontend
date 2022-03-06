@@ -1,0 +1,56 @@
+/* BlockName-ElemName_modName_modVal */
+
+.Navigation {
+  border-bottom: 1px solid var(--border);
+}
+
+.Navigation-List {
+  margin-left: -12px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.Navigation-List::-webkit-scrollbar {
+  display: none;
+}
+
+.Navigation-ListItem {
+}
+
+.Navigation-Link {
+  color: var(--font-dark-color);
+  display: block;
+  position: relative;
+  padding: 8px 12px;
+  font-weight: 500;
+  transition: all ease-in var(--transition-timeout);
+}
+
+.Navigation-Link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  bottom: -1px;
+  left: 12px;
+  right: 12px;
+  transition: all ease-in var(--transition-timeout);
+}
+
+.Navigation-Link:hover {
+  color: var(--primary-hovered);
+}
+.Navigation-Link:hover::after {
+  background-color: var(--secondary-hovered);
+}
+
+.Navigation-Link_active {
+  color: var(--primary-primary);
+}
+.Navigation-Link_active::after {
+  background-color: var(--secondary-primary);
+}

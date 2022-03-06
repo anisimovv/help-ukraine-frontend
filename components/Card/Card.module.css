@@ -1,0 +1,28 @@
+.Card {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--surface-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: all ease var(--transition-timeout);
+}
+
+.Card-Title {
+  flex-grow: 1;
+  margin-right: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--font-dark-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Card-Chevrone {
+  stroke: var(--primary-primary);
+}
+
+.Card:hover {
+  box-shadow: var(--box-shadow-hovered);
+}

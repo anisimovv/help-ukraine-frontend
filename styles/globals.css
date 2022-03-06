@@ -1,16 +1,113 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--body-background);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  /* Colors */
+  --grey-10: #ffffff;
+  --grey-20: #fafafa;
+  --grey-30: #ececee;
+  --grey-80: #656b77;
+  --grey-100: #192033;
+
+  --ultramarine-blue: #455af7;
+  --alice-blue: #ecefff;
+  --lavender-blue: #c3caff;
+  --palatinate-blue: #3144d5;
+  --persian-blue: #2132b3;
+  --very-light-blue: #7081ff;
+
+  --maize: #fdcc4a;
+  --cornsilk: #fff5db;
+  --blanched-almond: #fef0c9;
+  --orange-yellow: #fcbe17;
+  --mustard-yellow: #e9ac0a;
+  --khaki: #f4de94;
+
+  /* Theme Light */
+  --primary-primary: var(--ultramarine-blue);
+  --primary-secondary: var(--alice-blue);
+  --primary-border: var(--lavender-blue);
+  --primary-hovered: var(--palatinate-blue);
+  --primary-pressed: var(--persian-blue);
+  --primary-focused: var(--very-light-blue);
+
+  --secondary-primary: var(--maize);
+  --secondary-secondary: var(--cornsilk);
+  --secondary-border: var(--blanched-almond);
+  --secondary-hovered: var(--orange-yellow);
+  --secondary-pressed: var(--mustard-yellow);
+  --secondary-focused: var(--khaki);
+
+  --font-dark-color: var(--grey-100);
+  --font-light-color: var(--grey-100);
+  --font-accent-color: var(--grey-10);
+
+  --body-background: var(--grey-20);
+  --surface-background: var(--grey-10);
+
+  --border: var(--grey-30);
+
+  --box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+  --box-shadow-hovered: 0px 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Other */
+  --border-radius: 8px;
+  --transition-timeout: 0.1s;
 }
