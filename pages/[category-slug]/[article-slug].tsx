@@ -7,17 +7,21 @@ import { fetchNavigation } from "../../api/fetchNavigation";
 import { fetchArticle } from "../../api/fetchArticle";
 import { fetchArticlesPaths } from "../../api/fetchArticlesPaths";
 import { ApiEntityData, ArticleAttributes } from "../../types";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import remarkGfm from "remark-gfm";
 
 type Props = {
   article: ApiEntityData<ArticleAttributes>;
   navigation: any;
+  content: any;
 };
 
-const Article = ({ article, navigation }: Props) => {
+const Article = ({ article, navigation, content }: Props) => {
   return (
     <Layout navigation={<Navigation data={navigation.data} />}>
       <div>{article.attributes.title}</div>
-      <div>{article.attributes.content}</div>
+      <MDXRemote {...content} />
     </Layout>
   );
 };
@@ -42,11 +46,20 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     };
   }
 
+  const articleData = article.data[0];
+
+  const parsedContent = await serialize(articleData.attributes.content, {
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+    },
+  });
+
   const navigation = await fetchNavigation(locale as "en" | "uk");
 
   return {
     props: {
-      article: article.data[0],
+      article: articleData,
+      content: parsedContent,
       navigation,
     },
   };
