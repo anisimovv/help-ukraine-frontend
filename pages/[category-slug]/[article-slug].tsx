@@ -1,5 +1,4 @@
-import qs from "qs";
-import { GetStaticPaths, GetStaticProps } from "next/types";
+import { GetStaticProps } from "next/types";
 import React from "react";
 import Layout from "../../components/Layout";
 import Navigation from "../../components/Navigation";
@@ -10,6 +9,7 @@ import { ApiEntityData, ArticleAttributes } from "../../types";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import remarkGfm from "remark-gfm";
+import Head from "next/head";
 
 type Props = {
   article: ApiEntityData<ArticleAttributes>;
@@ -19,10 +19,12 @@ type Props = {
 
 const Article = ({ article, navigation, content }: Props) => {
   return (
-    <Layout navigation={<Navigation data={navigation.data} />}>
-      <div>{article.attributes.title}</div>
-      <MDXRemote {...content} />
-    </Layout>
+    <>
+      <Layout navigation={<Navigation data={navigation.data} />}>
+        <div>{article.attributes.title}</div>
+        <MDXRemote {...content} />
+      </Layout>
+    </>
   );
 };
 

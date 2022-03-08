@@ -96,7 +96,7 @@ h6 {
   --secondary-focused: var(--khaki);
 
   --font-dark-color: var(--grey-100);
-  --font-light-color: var(--grey-100);
+  --font-light-color: var(--grey-80);
   --font-accent-color: var(--grey-10);
 
   --body-background: var(--grey-20);

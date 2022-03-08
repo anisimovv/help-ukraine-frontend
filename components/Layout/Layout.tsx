@@ -1,6 +1,6 @@
-import styles from "./Layout.module.css";
 import { useRouter } from "next/router";
 import Container from "../Container";
+import Header from "../Header";
 
 type Props = {
   children: any;
@@ -12,30 +12,7 @@ export const Layout = ({ children, navigation }: Props) => {
 
   return (
     <>
-      <header className={styles.header}>
-        <Container>
-          <div className={styles.headerContent}>
-            <h1>Як допомогти</h1>
-            <div>
-              <div
-                onClick={() =>
-                  router.push("/finansami", undefined, { locale: "uk" })
-                }
-              >
-                Ukr
-              </div>
-              <div
-                onClick={() =>
-                  router.push("/finances", undefined, { locale: "en" })
-                }
-              >
-                En
-              </div>
-            </div>
-          </div>
-        </Container>
-        {navigation && navigation}
-      </header>
+      <Header navigation={navigation} />
       <Container as="main">{children}</Container>
     </>
   );
