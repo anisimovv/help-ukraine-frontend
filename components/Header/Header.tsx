@@ -17,7 +17,9 @@ export const Header = ({ navigation }: Props) => {
         <div className={styles["Header-Content"]}>
           <Link href="/">
             <a>
-              <h1 className={styles["Header-Logo"]}>Як допомогти</h1>
+              <h1 className={styles["Header-Logo"]}>
+                {router.locale === "uk" ? "Як допомогти" : "Help Ukraine"}
+              </h1>
             </a>
           </Link>
 
