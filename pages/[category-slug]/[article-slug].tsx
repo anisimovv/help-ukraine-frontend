@@ -22,7 +22,7 @@ const Article = ({ article, navigation, content }: Props) => {
     <>
       <Layout navigation={<Navigation data={navigation.data} />}>
         <div>{article.attributes.title}</div>
-        <MDXRemote {...content} />
+        <div className="prose"><MDXRemote {...content} /></div>
       </Layout>
     </>
   );
