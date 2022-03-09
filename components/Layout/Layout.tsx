@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useRouter } from "next/router";
 import Container from "../Container";
 import Header from "../Header";
@@ -5,15 +6,16 @@ import Header from "../Header";
 type Props = {
   children: any;
   navigation: any;
+  contentStyles?: any;
 };
 
-export const Layout = ({ children, navigation }: Props) => {
-  const router = useRouter();
-
+export const Layout = ({ children, navigation, contentStyles }: Props) => {
   return (
     <>
       <Header navigation={navigation} />
-      <Container as="main">{children}</Container>
+      <div style={contentStyles}>
+        <Container as="main">{children}</Container>
+      </div>
     </>
   );
 };

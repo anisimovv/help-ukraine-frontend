@@ -4,7 +4,23 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ["Inter", "sans-serif"],
+    },
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: "var(--primary-primary)",
+              "&:hover": {
+                color: "var(--primary-hover)",
+              },
+            },
+          },
+        },
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };

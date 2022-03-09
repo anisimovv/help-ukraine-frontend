@@ -17,12 +17,21 @@ type Props = {
   content: any;
 };
 
+const bodyStyle = {
+  backgroundColor: "var(--surface-background)",
+};
+
 const Article = ({ article, navigation, content }: Props) => {
   return (
     <>
-      <Layout navigation={<Navigation data={navigation.data} />}>
+      <Layout
+        navigation={<Navigation data={navigation.data} />}
+        contentStyles={{ ...bodyStyle }}
+      >
         <div>{article.attributes.title}</div>
-        <div className="prose"><MDXRemote {...content} /></div>
+        <div className="prose prose-lg">
+          <MDXRemote {...content} />
+        </div>
       </Layout>
     </>
   );
