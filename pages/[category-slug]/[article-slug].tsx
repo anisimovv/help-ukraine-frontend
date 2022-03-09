@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next/types";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import React from "react";
 import Layout from "../../components/Layout";
 import Navigation from "../../components/Navigation";
@@ -6,15 +7,14 @@ import { fetchNavigation } from "../../api/fetchNavigation";
 import { fetchArticle } from "../../api/fetchArticle";
 import { fetchArticlesPaths } from "../../api/fetchArticlesPaths";
 import { ApiEntityData, ArticleAttributes } from "../../types";
-import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import remarkGfm from "remark-gfm";
-import Head from "next/head";
+import ArticleEntry from "../../components/Article";
 
 type Props = {
   article: ApiEntityData<ArticleAttributes>;
+  content: MDXRemoteSerializeResult;
   navigation: any;
-  content: any;
 };
 
 const bodyStyle = {
@@ -29,14 +29,7 @@ const Article = ({ article, navigation, content }: Props) => {
         navigation={<Navigation data={navigation.data} />}
         contentStyles={{ ...bodyStyle }}
       >
-        <article>
-          <header>
-            <h1 className="text-2xl mb-12">{article.attributes.title}</h1>
-          </header>
-          <section className="prose">
-            <MDXRemote {...content} />
-          </section>
-        </article>
+        <ArticleEntry content={content} article={article} />
       </Layout>
     </>
   );

@@ -11,8 +11,6 @@ interface Props {
 export const Header = ({ navigation }: Props) => {
   const router = useRouter();
 
-  console.log(router);
-
   return (
     <header className={styles.Header}>
       <Container>

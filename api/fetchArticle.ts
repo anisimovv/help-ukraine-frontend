@@ -9,6 +9,7 @@ export const fetchArticle = async (params: any, locale: "en" | "uk") => {
       },
     },
     locale,
+    populate: ["category"],
   });
 
   const articleRes = await fetch(
