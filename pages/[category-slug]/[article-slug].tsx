@@ -29,11 +29,13 @@ const Article = ({ article, navigation, content }: Props) => {
         navigation={<Navigation data={navigation.data} />}
         contentStyles={{ ...bodyStyle }}
       >
-        <article className="prose md:prose-lg">
+        <article>
           <header>
-            <h1 className="text-2xl">{article.attributes.title}</h1>
+            <h1 className="text-2xl mb-12">{article.attributes.title}</h1>
           </header>
-          <MDXRemote {...content} />
+          <section className="prose">
+            <MDXRemote {...content} />
+          </section>
         </article>
       </Layout>
     </>
