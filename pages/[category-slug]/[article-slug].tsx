@@ -18,6 +18,7 @@ type Props = {
 };
 
 const bodyStyle = {
+  padding: "24px 0",
   backgroundColor: "var(--surface-background)",
 };
 
@@ -28,10 +29,12 @@ const Article = ({ article, navigation, content }: Props) => {
         navigation={<Navigation data={navigation.data} />}
         contentStyles={{ ...bodyStyle }}
       >
-        <div>{article.attributes.title}</div>
-        <div className="prose prose-lg">
+        <article className="prose md:prose-lg">
+          <header>
+            <h1 className="text-2xl">{article.attributes.title}</h1>
+          </header>
           <MDXRemote {...content} />
-        </div>
+        </article>
       </Layout>
     </>
   );
