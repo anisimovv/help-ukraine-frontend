@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import styles from "./Dialog.module.css";
 
 type DialogProps = {
-  isOpened: boolean;
+  isOpened : boolean;
   withBackdrop?: boolean;
   children: JSX.Element;
 };
@@ -17,6 +17,14 @@ const Dialog = ({ isOpened, withBackdrop, children }: DialogProps) => {
     ref.current = document.getElementById("modal-root");
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (isOpened) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpened]);
   
   const modalContent = isOpened ? (
     <div className={withBackdrop ? styles["Backdrop-WithBackdrop"] : styles["Backdrop"]}>
