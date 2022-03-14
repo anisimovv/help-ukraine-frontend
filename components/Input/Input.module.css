@@ -1,0 +1,63 @@
+.Input-Label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.Input-Title {
+  margin-bottom: 8px;
+  text-align: start;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--font-light-color);
+}
+
+.Input-Input {
+  padding: 16px;
+  width: 100%;
+  height: 56px;
+  background: var(--grey-20);
+
+  border: 1px solid var(--grey-30);
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.Input-Input_error {
+  composes: Input-Input;
+  border: 1px solid var(--error-red);
+}
+
+.Input-Input_error:hover,
+.Input-Input:hover {
+  border: 1px solid var(--primary-hovered);
+  outline: none;
+}
+
+.Input-Input_error:focus,
+.Input-Input:focus {
+  border: 3px solid var(--primary-focused);
+  outline: none;
+}
+
+.Input-Input::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--placeholder-gray);
+}
+
+.Input-Input:disabled::placeholder {
+  color: var(--disabled-gray);
+}
+
+.Input-ErrorText {
+  margin-top: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--error-red);
+}
