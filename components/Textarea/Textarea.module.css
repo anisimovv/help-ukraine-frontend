@@ -1,0 +1,46 @@
+.Textarea-Label {
+  display: flex;
+  flex-direction: column;
+}
+
+.Textarea-Title {
+  composes: Input-Title from "../Input/Input.module.css";
+}
+
+.Textarea-Textarea {
+  composes: Input-Input from "../Input/Input.module.css";
+  height: 104px;
+}
+
+.Textarea-Textarea_error {
+  composes: Textarea-Textarea;
+  border: 1px solid var(--error-red);
+}
+
+.Textarea-Textarea::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--placeholder-gray);
+}
+
+.Textarea-Textarea_error:hover,
+.Textarea-Textarea:hover {
+  border: 1px solid var(--primary-hovered);
+  outline: none;
+}
+
+.Textarea-Textarea_error:focus,
+.Textarea-Textarea:focus {
+  border: 3px solid var(--primary-focused);
+  outline: none;
+}
+
+.Textarea-Textarea:disabled::placeholder {
+  color: var(--disabled-gray);
+}
+
+.Textarea-ErrorText {
+  composes: Input-ErrorText from "../Input/Input.module.css";
+}

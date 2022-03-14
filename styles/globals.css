@@ -69,6 +69,8 @@ h6 {
   --grey-30: #ececee;
   --grey-80: #656b77;
   --grey-100: #192033;
+  --disabled-gray: #c5c7cc;
+  --placeholder-gray: #797d88;
 
   --ultramarine-blue: #455af7;
   --alice-blue: #ecefff;
@@ -76,6 +78,8 @@ h6 {
   --palatinate-blue: #3144d5;
   --persian-blue: #2132b3;
   --very-light-blue: #7081ff;
+
+  --error-red: #b20707;
 
   --maize: #fdcc4a;
   --cornsilk: #fff5db;
